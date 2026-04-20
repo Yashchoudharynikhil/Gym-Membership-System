@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="main-title">Members List</h1>
+
+    <div class="card">
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Plan</th>
+                <th>Expiry</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for m in members %}
+            <tr>
+                <td>{{ m[0] }}</td>
+                <td>{{ m[1] }}</td>
+                <td>{{ m[2] }}</td>
+                <td>{{ m[3] }}</td>
+                <td>
+                    <a href="/edit/{{ m[0] }}">✏️</a>
+                    <a href="/delete/{{ m[0] }}">🗑</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

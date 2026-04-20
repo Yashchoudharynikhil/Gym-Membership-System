@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Member</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="main-title">Edit Member</h1>
+
+    <div class="card">
+        <form method="POST">
+
+            <label>Name:</label>
+            <input type="text" name="name" value="{{ member[1] }}" required>
+
+            <label>Plan:</label>
+            <select name="plan">
+                <option {% if member[2]=='Basic' %}selected{% endif %}>Basic</option>
+                <option {% if member[2]=='Premium' %}selected{% endif %}>Premium</option>
+                <option {% if member[2]=='Pro' %}selected{% endif %}>Pro</option>
+            </select>
+
+            <label>Expiry Date:</label>
+            <input type="date" name="expiry" value="{{ member[3] }}" required>
+
+            <button type="submit">Update Member</button>
+
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

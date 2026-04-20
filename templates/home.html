@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Membership System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="main-title">Gym Membership System</h1>
+
+    <div class="card">
+        <h2>About Project</h2>
+        <p>
+            This is a Gym Membership Management System built using Flask and MySQL.
+            It allows users to manage members, track plans, and maintain records efficiently.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Features</h2>
+
+        <a href="/add"><button>Add Member</button></a>
+        <br><br>
+        <a href="/members"><button>View Members</button></a>
+    </div>
+
+</div>
+
+</body>
+</html>

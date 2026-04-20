@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Membership System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- 🔥 MAIN TITLE -->
+    <h1 class="main-title">Gym Membership System</h1>
+
+    <!-- 🟢 ADD MEMBER -->
+    <div class="card">
+        <h2>Add Member</h2>
+
+        <form method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Plan:</label>
+            <select name="plan">
+                <option value="Basic">Basic</option>
+                <option value="Premium">Premium</option>
+                <option value="Pro">Pro</option>
+            </select>
+
+            <label>Expiry Date:</label>
+            <input type="date" name="expiry" required>
+
+            <button type="submit">Register New Member</button>
+        </form>
+    </div>
+
+    <!-- 🔵 MEMBERS LIST -->
+    <div class="card">
+        <h2>Members List</h2>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Plan</th>
+                <th>Expiry Date</th>
+                <th>Actions</th> <!-- ✅ added -->
+            </tr>
+
+            {% for m in members %}
+            <tr>
+                <td>{{ m[0] }}</td>
+                <td>{{ m[1] }}</td>
+                <td>{{ m[2] }}</td>
+                <td>{{ m[3] }}</td>
+                <td>
+                    <a href="/edit/{{ m[0] }}" class="edit">✏️ Edit</a>
+                    |
+                    <a href="/delete/{{ m[0] }}" class="delete"
+                       onclick="return confirm('Delete this member?')">🗑 Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
