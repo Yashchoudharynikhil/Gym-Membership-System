@@ -3,8 +3,6 @@
 A modern web-based Gym Membership Management System built using **Flask** and **MySQL**.  
 This project allows gym admins to efficiently manage members, track membership plans, and perform full CRUD operations.
 
----
-
 ## 🚀 Features
 
 - ➕ Add new members  
@@ -14,7 +12,6 @@ This project allows gym admins to efficiently manage members, track membership p
 - 📊 Dashboard with basic stats  
 - 🎨 Modern UI with responsive design  
 
----
 
 ## 🛠 Tech Stack
 
@@ -23,6 +20,4 @@ This project allows gym admins to efficiently manage members, track membership p
 - **Frontend:** HTML, CSS  
 - **Tools:** VS Code, Git, GitHub  
 
----
 
-## 📂 Project Structure
